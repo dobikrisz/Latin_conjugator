@@ -6,6 +6,8 @@ from pywords.matchfilter import MatchFilter
 import pywords.utils as pwutils
 from typing import List
 
+from tabulate import tabulate
+
 verb_endings = {
     "active": {
         "indicative" : {
@@ -119,12 +121,14 @@ def verb_conjugate(match, form="active", mood="indicative", tense="present", ver
     conj_type = match.dl_entry.conj
 
     result = []
+    table = [["person", "verb"]]
 
     for person, ve in verb_endings[form][mood][tense]["conj_"+conj_type].items():
         result.append(stem + ve)
+        table.append([person, stem + ve])
 
-        if verbose:
-            print(r"%s %s" % (person, stem + ve))
+    if verbose:
+        print(tabulate(table, headers="firstrow"))
 
     return result
             

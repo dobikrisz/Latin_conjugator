@@ -6,6 +6,8 @@ from pywords.matchfilter import MatchFilter
 import pywords.utils as pwutils
 from typing import List
 
+from tabulate import tabulate
+
 noun_endings = {
     "I declension" : {
         "no spec ending" : {
@@ -111,9 +113,13 @@ def noun_conjugate(match, verbose = True):
         result.append(stem + ne)
 
     if verbose:
-        for i in range(5):
-            list_of_moods = ["nominative", "vocative", "accusative", "genitive", "dative", "ablative"]
-            print(list_of_moods[i], result[i], result[5+i])
+        headers = ["mood", "Singular", "plural"]
+        list_of_moods = ["nominative", "vocative", "accusative", "genitive", "dative", "ablative"]
+        table = []
+        for i in range(0,6):
+            table.append([list_of_moods[i], result[i], result[6+i]])
+
+        print(tabulate(table, headers))
             
 
     return result

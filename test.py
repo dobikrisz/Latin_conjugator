@@ -9,10 +9,11 @@ import pywords.utils as pwutils
 from utils.verb_conjugation import verb_conjugate
 from utils.noun_conjugation import noun_conjugate
 
-word = 'bellum'
+word = 'bibit'
 
 for match in lookup.match_word(word): # Match possible words
     print(match)
+    print("\n")
     if isinstance(match.dl_entry, pywords.definitions.DictlineVerbEntry):
         verb_conjugate(match)
     elif isinstance(match.dl_entry, pywords.definitions.DictlineNounEntry):
