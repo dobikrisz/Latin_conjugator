@@ -103,7 +103,7 @@ verb_endings = {
     }  
 }
 
-def conjugate(match, form="active", mood="indicative", tense="present", verbose = True):
+def verb_conjugate(match, form="active", mood="indicative", tense="present", verbose = True):
     if not isinstance(match.dl_entry, pywords.definitions.DictlineVerbEntry):
         raise TypeError("Word is not WordMatch verb. Cannot conjugate it")
     if form not in ["active", "passive"]:

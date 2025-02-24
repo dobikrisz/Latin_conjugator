@@ -6,11 +6,14 @@ from pywords.matchfilter import MatchFilter
 # utils has more specific tools for text analysis and generating vocab list files
 import pywords.utils as pwutils
 
-from utils.verb_conjugation import conjugate
+from utils.verb_conjugation import verb_conjugate
+from utils.noun_conjugation import noun_conjugate
 
-word = 'capio'
+word = 'bellum'
 
 for match in lookup.match_word(word): # Match possible words
     print(match)
     if isinstance(match.dl_entry, pywords.definitions.DictlineVerbEntry):
-        conjugate(match)
+        verb_conjugate(match)
+    elif isinstance(match.dl_entry, pywords.definitions.DictlineNounEntry):
+        noun_conjugate(match)
