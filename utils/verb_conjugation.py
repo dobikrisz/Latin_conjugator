@@ -32,8 +32,8 @@ verb_endings = {
                     "1st person singular" : "o",
                     "2nd person singular" : "is",
                     "3rd person singular" : "it",
-                    "1st person plural" : "imus",
-                    "2nd person plural" : "itis",
+                    "1st person plural" : "ĭmus",
+                    "2nd person plural" : "ĭtis",
                     "3rd person plural" : "unt"
                 },
                 "mixed" : {

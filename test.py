@@ -9,7 +9,7 @@ import pywords.utils as pwutils
 from utils.verb_conjugation import verb_conjugate
 from utils.noun_conjugation import noun_conjugate
 
-word = 'bibit'
+word = 'insulae'
 
 for match in lookup.match_word(word): # Match possible words
     print(match)
